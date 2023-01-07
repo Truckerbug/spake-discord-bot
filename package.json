@@ -23,5 +23,8 @@
   "bugs": {
     "url": "https://github.com/Truckerbug/spake-discord-bot/issues"
   },
-  "homepage": "https://github.com/Truckerbug/spake-discord-bot#readme"
+  "homepage": "https://github.com/Truckerbug/spake-discord-bot#readme",
+  "dependencies": {
+    "discord.js": "^14.7.1"
+  }
 }
