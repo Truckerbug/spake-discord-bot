@@ -1,9 +1,11 @@
 const fs = require('node:fs');
 const path = require('node:path');
-const { Client, Collection, Events, GatewayIntentBits } = require('discord.js');
+const { Client, ClientUser, Collection, Events, GatewayIntentBits } = require('discord.js');
 const { token } = require('./config.json');
 
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
+
+
 
 const eventsPath = path.join(__dirname, 'events');
 const eventFiles = fs.readdirSync(eventsPath).filter(file => file.endsWith('.js'));
@@ -30,4 +32,8 @@ for (const file of commandFiles) {
 
 
 
-client.login(token);
+client.login(token).then(() => {
+    client.user.setAvatar('./config.png').then(user => console.log(`New avatar set!`))
+        .catch(console.error);
+});
+
