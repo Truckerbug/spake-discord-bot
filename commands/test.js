@@ -1,12 +1,5 @@
 const { SlashCommandBuilder, EmbedBuilder, channelLink, ActionRowBuilder,ButtonBuilder, ButtonStyle, Events} = require('discord.js');
 
-const testEmbed = new EmbedBuilder()
-    .setColor(0x0099FF)
-    .setTitle('This bot on github')
-    .setURL('https://github.com/Truckerbug/spake-discord-bot')
-    .setAuthor({ name: 'Truckerbug', url: 'https://bit.ly/truckerbug11'})
-    .setDescription('This bot on GitHub')
-
 module.exports = {
     data: new SlashCommandBuilder()
         .setName('test')
@@ -22,9 +15,10 @@ module.exports = {
 
             const embed = new EmbedBuilder()
                 .setColor(0x0099FF)
-                .setTitle('Some title')
-                .setURL('https://discord.js.org')
-                .setDescription('Some description here');
+                .setTitle('This bot on github')
+                .setURL('https://github.com/Truckerbug/spake-discord-bot')
+                .setAuthor({ name: 'Truckerbug', url: 'https://bit.ly/truckerbug11'})
+                .setDescription('This bot on GitHub')
 
             await interaction.reply({ content: 'I think you should,', ephemeral: true, embeds: [embed], components: [row] });
             
