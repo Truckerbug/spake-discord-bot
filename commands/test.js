@@ -1,4 +1,4 @@
-const { SlashCommandBuilder, EmbedBuilder, channelLink } = require('discord.js');
+const { SlashCommandBuilder, EmbedBuilder, channelLink, ActionRowBuilder,ButtonBuilder, ButtonStyle, Events} = require('discord.js');
 
 const testEmbed = new EmbedBuilder()
     .setColor(0x0099FF)
@@ -12,6 +12,21 @@ module.exports = {
         .setName('test')
         .setDescription('Test this bot!'),
     async execute(interaction) {
-        channel.send({ embeds: [testEmbed] });
+            const row = new ActionRowBuilder()
+                .addComponents(
+                    new ButtonBuilder()
+                        .setCustomId('primary')
+                        .setLabel('Click me!')
+                        .setStyle(ButtonStyle.Primary)
+                );
+
+            const embed = new EmbedBuilder()
+                .setColor(0x0099FF)
+                .setTitle('Some title')
+                .setURL('https://discord.js.org')
+                .setDescription('Some description here');
+
+            await interaction.reply({ content: 'I think you should,', ephemeral: true, embeds: [embed], components: [row] });
+            
     },
 };
