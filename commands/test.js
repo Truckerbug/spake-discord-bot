@@ -20,7 +20,7 @@ module.exports = {
                 .setAuthor({ name: 'Truckerbug', url: 'https://bit.ly/truckerbug11'})
                 .setDescription('This bot on GitHub')
 
-            await interaction.reply({ content: 'I think you should,', ephemeral: true, embeds: [embed], components: [row] });
+            await interaction.reply({ content: 'I think you should,', ephemeral: true, components: [row], embeds: [embed] });
             
     },
 };
